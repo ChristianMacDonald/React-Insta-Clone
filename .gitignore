@@ -2,3 +2,5 @@
 node_modules
 
 .idea/
+.vs/slnx.sqlite
+.vs/React-Insta-Clone/v15/.suo
