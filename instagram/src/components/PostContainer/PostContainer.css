@@ -1,0 +1,27 @@
+.PostContainer {
+    width: 35%;
+    margin: 10px auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.PostContainerHeader {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.PostContainerHeader img {
+    width: 30px;
+    border-radius: 30px;
+}
+
+.PostContainerHeader span {
+    font-weight: bold;
+    margin: 5px;
+}
+
+.PostContainerImage img {
+    width: 100%;
+    height: auto;
+}
