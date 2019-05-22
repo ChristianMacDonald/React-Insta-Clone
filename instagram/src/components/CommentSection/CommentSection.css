@@ -1,0 +1,9 @@
+.Comment {
+    text-align: left;
+    margin: 20px;
+}
+
+.Comment span {
+    font-weight: bold;
+    margin-right: 5px;
+}
