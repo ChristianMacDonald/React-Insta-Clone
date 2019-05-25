@@ -5,13 +5,24 @@ import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostContainer/PostContainer';
 
-function App() {
-    return (
-        <div className="App">
-            <SearchBar />
-            {dummyData.map(datum => <PostContainer post={datum} />)}
-        </div>
-    );
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {};
+    }
+
+    componentDidMount() {
+        this.setState({ data: dummyData });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <SearchBar />
+                {dummyData.map(datum => <PostContainer post={datum} />)}
+            </div>
+        );
+    }
 }
 
 export default App;
