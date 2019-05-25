@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import wordmark from './instagram-wordmark.svg';
 import './App.css';
 import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
@@ -24,13 +25,14 @@ class App extends React.Component {
             let new_data = [...this.state.data];
             new_data[event.target.dataset.index] = new_datum;
             this.setState({ data: new_data });
+            event.target.value = "";
         }
     }
 
     render() {
         return (
             <div className="App">
-                <SearchBar logo={logo} />
+                <SearchBar wordmark={wordmark} />
                 {this.state.data.map((datum, index) => <PostContainer post={datum} key={index} index={index} keyDownHandler={this.handleKeyDown} />)}
             </div>
         );

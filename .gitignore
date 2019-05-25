@@ -5,3 +5,4 @@ node_modules
 .vs/slnx.sqlite
 .vs/React-Insta-Clone/v15/.suo
 .vs/VSWorkspaceState.json
+.vs/config/applicationhost.config

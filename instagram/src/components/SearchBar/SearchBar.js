@@ -15,8 +15,14 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="SearchBar">
-                <img src={this.props.logo} alt="logo" />
-                <input placeholder="Search" onChange={this.handleChange} />
+                <div>
+                    <i className="fab fa-instagram"></i>
+                    <img src={this.props.wordmark} alt="wordmark" />
+                </div>
+                <form>
+                    <i className="fas fa-search"></i>
+                    <input placeholder="Search" onChange={this.handleChange} />
+                </form>
                 <span>Placeholder</span>
             </div>
         );

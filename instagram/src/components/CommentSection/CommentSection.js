@@ -9,7 +9,8 @@ function CommentSection(props) {
                     <p className="Comment" key={index}>
                         <b>{comment.username}</b>
                         {comment.text}
-                    </p>);
+                    </p>
+                );
             })}
             <input placeholder="Add a comment..." onKeyDown={props.keyDownHandler} data-index={props.index} />
         </div>

@@ -12,6 +12,9 @@ function PostContainer(props) {
             <div className="PostContainerImage">
                 <img src={props.post.imageUrl} alt="post" />
             </div>
+            <div>
+                <span>{props.post.likes}</span>
+            </div>
             <CommentSection comments={props.post.comments} index={props.index} keyDownHandler={props.keyDownHandler} />
         </div>
     );
