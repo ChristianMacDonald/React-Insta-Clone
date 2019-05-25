@@ -1,18 +1,19 @@
 import React from 'react';
 import './CommentSection.css';
 
-class CommentSection extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className="CommentSection">
-                {this.props.comments.map(comment => <p className="Comment"><span>{comment.username}</span>{comment.text}</p>)}
-            </div>
-        );
-    }
+function CommentSection(props) {
+    return (
+        <div className="CommentSection">
+            {props.comments.map((comment, index) => {
+                return (
+                    <p className="Comment" key={index}>
+                        <b>{comment.username}</b>
+                        {comment.text}
+                    </p>);
+            })}
+            <input placeholder="Add a comment..." onKeyDown={props.keyDownHandler} data-index={props.index} />
+        </div>
+    );
 }
 
 export default CommentSection;

@@ -1,9 +1,16 @@
 .Comment {
-    text-align: left;
-    margin: 20px;
 }
 
-.Comment span {
-    font-weight: bold;
+.Comment b { 
     margin-right: 5px;
+}
+
+.CommentSection {
+    text-align: left;
+    padding: 20px;
+}
+
+.CommentSection input {
+    border: 0;
+    width: 100%;
 }
