@@ -1,13 +1,14 @@
-.Comment {
+.CommentSection {
+    text-align: left;
+    padding: 5px 20px 20px 20px;
 }
 
-.Comment b { 
+.CommentSection .Comment b {
     margin-right: 5px;
 }
 
-.CommentSection {
-    text-align: left;
-    padding: 20px;
+.CommentSection .Comment:first-child {
+    margin-top: 0;
 }
 
 .CommentSection input {

@@ -3,6 +3,11 @@
     margin: 10px auto;
     border: 1px solid lightgray;
     border-radius: 5px;
+    text-align: left;
+}
+
+.PostContainer:first-child {
+    margin-top: 100px;
 }
 
 .PostContainerHeader {
@@ -24,4 +29,26 @@
 .PostContainerImage img {
     width: 100%;
     height: auto;
+}
+
+.PostContainerStats {
+    padding: 20px 20px 5px 20px;
+}
+
+.PostContainerStats .fas.fa-heart {
+    margin-right: 10px;
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: red;
+}
+
+.PostContainerStats .far.fa-heart {
+    margin-right: 10px;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.PostContainerStats .fa-comment {
+    font-size: 25px;
+    margin-bottom: 5px;
 }

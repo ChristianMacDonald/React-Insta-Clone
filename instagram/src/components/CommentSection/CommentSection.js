@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CommentSection.css';
 
 function CommentSection(props) {
@@ -12,9 +13,15 @@ function CommentSection(props) {
                     </p>
                 );
             })}
-            <input placeholder="Add a comment..." onKeyDown={props.keyDownHandler} data-index={props.index} />
+            <input placeholder="Add a comment..." onKeyDown={props.addCommentHandler} data-index={props.index} />
         </div>
     );
 }
+
+CommentSection.propTypes = {
+    comments: PropTypes.array,
+    index: PropTypes.number,
+    addCommentHandler: PropTypes.func
+};
 
 export default CommentSection;
