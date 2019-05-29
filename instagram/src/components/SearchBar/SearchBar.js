@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SearchBar.css';
 
-function SearchBar(props) {
+const SearchBar = props => {
     return (
         <div className="SearchBar">
             <div>

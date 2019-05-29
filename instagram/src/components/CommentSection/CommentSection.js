@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CommentSection.css';
 
-function CommentSection(props) {
+const CommentSection = props => {
     return (
         <div className="CommentSection">
             {props.comments.map((comment, index) => {
