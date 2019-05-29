@@ -22,7 +22,7 @@ class PostsPage extends React.Component {
     addComment(event) {
         if (event.key === "Enter") {
             let new_comments = [...this.state.data[event.target.dataset.index].comments];
-            new_comments.push({ username: "defaultUser", text: event.target.value });
+            new_comments.push({ username: this.props.username, text: event.target.value });
             let new_datum = { ...this.state.data[event.target.dataset.index], comments: new_comments };
             let new_data = [...this.state.data];
             new_data[event.target.dataset.index] = new_datum;

@@ -20,7 +20,7 @@ const SearchBar = props => {
             </span>
         </div>
     );
-}
+};
 
 SearchBar.propTypes = {
     wordmark: PropTypes.string,

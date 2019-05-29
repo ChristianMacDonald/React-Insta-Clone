@@ -16,7 +16,7 @@ const CommentSection = props => {
             <input placeholder="Add a comment..." onKeyDown={props.addCommentHandler} data-index={props.index} />
         </div>
     );
-}
+};
 
 CommentSection.propTypes = {
     comments: PropTypes.array,
