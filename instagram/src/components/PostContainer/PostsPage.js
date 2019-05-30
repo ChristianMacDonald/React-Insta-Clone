@@ -1,6 +1,4 @@
 import React from 'react';
-import wordmark from '../../instagram-wordmark.svg';
-import './PostsPage.css';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 
@@ -63,7 +61,7 @@ class PostsPage extends React.Component {
     render() {
         return (
             <div className="PostsPage">
-                <SearchBar wordmark={wordmark} searchHandler={this.search} />
+                <SearchBar searchHandler={this.search} />
                 <div>
                     {this.state.searching ? this.state.search_data.map(this.mapData) : this.state.data.map(this.mapData)}
                 </div>

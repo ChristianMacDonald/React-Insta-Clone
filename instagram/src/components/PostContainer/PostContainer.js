@@ -1,7 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './PostContainer.css';
+import styled from 'styled-components';
 import CommentSection from '../CommentSection/CommentSection';
+
+const Post = styled.div`
+    width: 35%;
+    margin: 10px auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    text-align: left;
+    
+    &:first-child {
+        margin-top: 100px;
+    }
+`;
+
+const PostHeader = styled.header`
+    display: flex;
+    align-items: center;
+    padding: 10px;
+`;
+
+const Thumbnail = styled.img.attrs({ alt: 'thumbnail' })`
+    width: 30px;
+    border-radius: 30px;
+`;
+
+const Username = styled.span`
+    font-weight: bold;
+    margin: 5px;
+`;
+
+const PostImage = styled.img.attrs({ alt: 'post' })`
+    width: 100%;
+    height: auto;
+`;
+
+const PostStats = styled.div`
+    padding: 20px 20px 5px 20px;
+`;
+
+const HeartIcon = styled.i`
+    margin-right: 10px;
+    font-size: 25px;
+    margin-bottom: 5px;
+    ${props => props.liked ? 'color: red;' : null}
+`;
+
+const CommentIcon = styled.i.attrs({ className: 'far fa-comment' })`
+    font-size: 25px;
+    margin-bottom: 5px;
+`;
 
 class PostContainer extends React.Component {
     constructor(props) {
@@ -22,22 +71,20 @@ class PostContainer extends React.Component {
 
     render() {
         return (
-            <div className="PostContainer">
-                <div className="PostContainerHeader">
-                    <img src={this.props.post.thumbnailUrl} alt="thumbnail" />
-                    <span>{this.props.post.username}</span>
-                </div>
-                <div className="PostContainerImage">
-                    <img src={this.props.post.imageUrl} alt="post" />
-                </div>
-                <div className="PostContainerStats">
-                    <i className={`${this.state.liked ? "fas fa-heart" : "far fa-heart"}`} data-index={this.props.index} onClick={this.like}></i>
-                    <i className="far fa-comment"></i>
+            <Post>
+                <PostHeader>
+                    <Thumbnail src={this.props.post.thumbnailUrl}/>
+                    <Username>{this.props.post.username}</Username>
+                </PostHeader>
+                <PostImage src={this.props.post.imageUrl} />
+                <PostStats>
+                    <HeartIcon className={`${this.state.liked ? "fas fa-heart" : "far fa-heart"}`} liked={this.state.liked} data-index={this.props.index} onClick={this.like} />
+                    <CommentIcon />
                     <br />
                     <span>{this.props.post.likes} likes</span>
-                </div>
+                </PostStats>
                 <CommentSection comments={this.props.post.comments} index={this.props.index} addCommentHandler={this.props.addCommentHandler} />
-            </div>
+            </Post>
         );
     }
 }

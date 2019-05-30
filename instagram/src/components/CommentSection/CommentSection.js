@@ -1,20 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CommentSection.css';
+import styled from 'styled-components';
+
+const CommentContainer = styled.div`
+    text-align: left;
+    padding: 5px 20px 20px 20px;
+`;
+
+const Comment = styled.p`
+    &:first-child {
+        margin-top: 0;
+    }
+`;
+
+const Username = styled.b`
+    margin-right: 5px;
+`;
+
+const CommentField = styled.input.attrs({ placeholder: 'Add a comment...' })`
+    border: 0;
+    width: 100%;
+`;
 
 const CommentSection = props => {
     return (
-        <div className="CommentSection">
+        <CommentContainer>
             {props.comments.map((comment, index) => {
                 return (
-                    <p className="Comment" key={index}>
-                        <b>{comment.username}</b>
+                    <Comment key={index}>
+                        <Username>{comment.username}</Username>
                         {comment.text}
-                    </p>
+                    </Comment>
                 );
             })}
-            <input placeholder="Add a comment..." onKeyDown={props.addCommentHandler} data-index={props.index} />
-        </div>
+            <CommentField onKeyDown={props.addCommentHandler} data-index={props.index} />
+        </CommentContainer>
     );
 };
 
